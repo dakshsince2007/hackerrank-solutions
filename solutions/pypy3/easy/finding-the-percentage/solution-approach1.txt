@@ -7,6 +7,12 @@
 # Language    pypy3
 # Status      Accepted
 # Submitted   2026-10-06, 12:32 p.m.
+# Technique   dictionary-mapping-fixed-unpacking
+# Time        O(N)
+# Space       O(N)
+# Insight     The implementation maps student names to lists of scores and calculates the average by unpacking exactly three elements from the list associated with the query name.
+# Interview   Before: "I should iterate through the dictionary and sum all elements dynamically." After: "Since the problem constraints imply exactly three marks per student, I can unpack the list into three variables to calculate the average in O(1) time after O(N) dictionary construction."
+# Pitfalls    (1) The code assumes exactly three marks per student, which will raise a ValueError if the input contains a different number of scores.  (2) The code fails to handle students not present in the dictionary because it lacks an else block for the query_name check.
 # ──────────────────────────────────────────────────
 
 if __name__ == '__main__':
