@@ -7,6 +7,12 @@
 # Language    pypy3
 # Status      Accepted
 # Submitted   2026-10-06, 12:13 p.m.
+# Technique   nested-list-sorting-filtering
+# Time        O(N log N)
+# Space       O(N)
+# Insight     The algorithm identifies the second lowest grade by filtering out the minimum value from the list of all grades and finding the minimum of the remaining values.
+# Interview   Before: "How would you find the second lowest value in a list?" After: "I sort the list by name to ensure alphabetical order, then filter out the minimum grade to isolate the second lowest. This approach runs in O(N log N) time due to sorting, which handles the requirement to print names alphabetically."
+# Pitfalls    (1) Failing to account for multiple students sharing the same second lowest grade by not iterating through the entire list.  (2) Assuming the second lowest grade is simply the second element in a sorted list of grades, which ignores duplicate values.  (3) Neglecting the requirement to print names in alphabetical order by failing to sort the initial list of students.
 # ──────────────────────────────────────────────────
 
 if __name__ == '__main__':
