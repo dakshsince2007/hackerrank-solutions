@@ -7,6 +7,12 @@
 # Language    pypy3
 # Status      Accepted
 # Submitted   2026-10-07, 12:32 p.m.
+# Technique   command-pattern-list-dispatch
+# Time        O(N * M) where M is the average list op…
+# Space       O(N)
+# Insight     The implementation processes commands by splitting input strings and mapping them to corresponding Python list methods.
+# Interview   Before: "I would use a dictionary to map command strings to function objects." After: "This approach uses conditional branching to execute list methods, resulting in O(N * M) time complexity, where M is the cost of operations like sort or insert."
+# Pitfalls    (1) The remove method raises a ValueError if the specified integer is not present in the list.  (2) The pop method raises an IndexError if called on an empty list.  (3) The insert method requires two arguments, while other commands like print or sort require none, leading to potential index errors if input parsing is not handled.
 # ──────────────────────────────────────────────────
 
 if __name__ == '__main__':
